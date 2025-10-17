@@ -17,7 +17,7 @@ export const minikitConfig = {
     version: "1",
     name: "Effort", 
     subtitle: "Every workout is a coin", 
-    description: "From Apple Health or Google Fit, automatically track, sync, and post your workouts as tradeable coins on-chain. Own your data, and build a fitness economy on Creator Coin + Doppler.",
+    description: "Track workouts from Apple Health or Google Fit and turn them into tradeable coins on-chain. Own your data and build a fitness economy.",
     screenshotUrls: [`${ROOT_URL}/screenshot.png`],
     iconUrl: `${ROOT_URL}/icon.png`,
     splashImageUrl: `${ROOT_URL}/splash.png`,
