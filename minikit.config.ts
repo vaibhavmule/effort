@@ -28,7 +28,7 @@ export const minikitConfig = {
     tags: ["fitness", "workout", "on-chain", "nft", "crypto"],
     heroImageUrl: `${ROOT_URL}/hero.png`, 
     tagline: "Own your data",
-    ogTitle: "Effort - Every workout is a coin",
+    ogTitle: "Effort - Every workout is coin",
     ogDescription: "Track workouts from Apple Health or Google Fit and turn them into tradeable coins on-chain.",
     ogImageUrl: `${ROOT_URL}/hero.png`,
   },
