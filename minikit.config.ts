@@ -13,6 +13,9 @@ export const minikitConfig = {
     payload: "eyJkb21haW4iOiJlZmZvcnQtZ2FtbWEudmVyY2VsLmFwcCJ9",
     signature: "vtpg8hqS4McEmyTYrgaVpMqSYZ20v+lBP1xSZF/x491byMgjYUDrp+Fc01Kgr639waUHkRhnbvb4JoyxR9HoVhs="
   },
+  baseBuilder: {
+    ownerAddress: "0x6828D9e13B9C5BF166d58F60340FD8C3D1FE7693"
+  },
   miniapp: {
     version: "1",
     name: "Effort", 
