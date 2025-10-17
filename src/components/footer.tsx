@@ -48,6 +48,7 @@ export function Footer() {
               X/Twitter
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#1a1a1a] group-hover:w-full transition-all duration-300"></span>
             </motion.a>
+            {/* TODO: Update for Base app compatibility - replace with in-app signup/auth flow before featured submission */}
             <motion.a
               href="https://farcaster.xyz/vaibhavmule"
               target="_blank"

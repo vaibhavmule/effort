@@ -65,6 +65,7 @@ export function NavBar() {
           </div>
 
           {/* Desktop CTA Button */}
+          {/* TODO: Update for Base app compatibility - replace with in-app signup/auth flow before featured submission */}
           <a
             href="https://farcaster.xyz/vaibhavmule"
             target="_blank"
@@ -77,7 +78,7 @@ export function NavBar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-[#1a1a1a] transition-colors"
+            className="md:hidden p-3 text-gray-600 hover:text-[#1a1a1a] transition-colors min-h-[44px] min-w-[44px]"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -120,6 +121,7 @@ export function NavBar() {
                 >
                   FAQ
                 </button>
+                {/* TODO: Update for Base app compatibility - replace with in-app signup/auth flow before featured submission */}
                 <a
                   href="https://farcaster.xyz/vaibhavmule"
                   target="_blank"

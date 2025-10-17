@@ -2,6 +2,7 @@
 import { useEffect } from "react"
 import { useMiniKit } from "@coinbase/onchainkit/minikit"
 import { NavBar } from "@/components/navbar"
+import { BottomNav } from "@/components/bottom-nav"
 import { Hero } from "@/components/hero"
 import { SocialProof } from "@/components/social-proof"
 import { Features } from "@/components/features"
@@ -21,7 +22,7 @@ export default function Home() {
   }, [setFrameReady, isFrameReady])
 
   return (
-    <main className="min-h-screen bg-white text-[#1a1a1a]">
+    <main className="min-h-screen bg-white text-[#1a1a1a] pb-16 md:pb-0">
       <NavBar />
       <Hero />
       <SocialProof />
@@ -30,6 +31,7 @@ export default function Home() {
       <WhyEffort />
       <FAQ />
       <Footer />
+      <BottomNav />
     </main>
   )
 }

@@ -14,7 +14,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-12 px-6",
-        sm: "h-10 px-4 text-xs",
+        sm: "h-11 px-4 text-xs", // 44px minimum for touch targets per Base guidelines
         lg: "h-14 px-8 text-base",
       },
     },
