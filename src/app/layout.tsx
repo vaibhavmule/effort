@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
 import { Space_Grotesk } from "next/font/google"
+import { SafeArea } from "@coinbase/onchainkit/minikit"
+import { minikitConfig } from "../../minikit.config"
+import { RootProvider } from "./rootProvider"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
@@ -8,39 +11,54 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "500", "600", "700"],
 })
 
-export const metadata: Metadata = {
-  title: "Effort.so - The protocol for effort on-chain",
-  description: "Every workout is a coin. From Apple Health or Google Fit, automatically track, sync, and post your workouts as tradeable coins on-chain. Own your data, and build a fitness economy on Creator Coin + Doppler.",
-  keywords: ["fitness", "NFT", "blockchain", "workout", "on-chain", "Base", "Creator Coin", "effort"],
-  authors: [{ name: "Effort.so" }],
-  creator: "Effort.so",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://effort.so",
-    title: "Effort.so - The protocol for effort on-chain",
-    description: "Every workout is a coin. From Apple Health or Google Fit, automatically track, sync, and post your workouts as tradeable coins on-chain.",
-    siteName: "Effort.so",
-    images: [
-      {
-        url: "https://i.ibb.co/3PV1h7D/Screenshot-2025-10-18-at-2-20-51-AM.png",
-        width: 1200,
-        height: 630,
-        alt: "Effort.so - The protocol for effort on-chain",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Effort.so - The protocol for effort on-chain",
-    description: "Every workout is a coin. From Apple Health or Google Fit, automatically track, sync, and post your workouts as tradeable coins on-chain.",
-    creator: "@effortso",
-    images: ["https://i.ibb.co/3PV1h7D/Screenshot-2025-10-18-at-2-20-51-AM.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: minikitConfig.miniapp.name,
+    description: minikitConfig.miniapp.description,
+    keywords: ["fitness", "NFT", "blockchain", "workout", "on-chain", "Base", "Creator Coin", "effort"],
+    authors: [{ name: "Effort.so" }],
+    creator: "Effort.so",
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: "https://effort.so",
+      title: minikitConfig.miniapp.ogTitle,
+      description: minikitConfig.miniapp.ogDescription,
+      siteName: minikitConfig.miniapp.name,
+      images: [
+        {
+          url: minikitConfig.miniapp.ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: minikitConfig.miniapp.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: minikitConfig.miniapp.ogTitle,
+      description: minikitConfig.miniapp.ogDescription,
+      creator: "@effortso",
+      images: [minikitConfig.miniapp.ogImageUrl],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    other: {
+      "fc:frame": JSON.stringify({
+        version: minikitConfig.miniapp.version,
+        imageUrl: minikitConfig.miniapp.heroImageUrl,
+        button: {
+          title: `Launch ${minikitConfig.miniapp.name}`,
+          action: {
+            name: `Launch ${minikitConfig.miniapp.name}`,
+            type: "launch_frame",
+          },
+        },
+      }),
+    },
+  }
 }
 
 export default function RootLayout({
@@ -49,12 +67,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${spaceGrotesk.variable} font-sans antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <RootProvider>
+      <html lang="en">
+        <body
+          className={`${spaceGrotesk.variable} font-sans antialiased`}
+        >
+          <SafeArea>{children}</SafeArea>
+        </body>
+      </html>
+    </RootProvider>
   )
 }
