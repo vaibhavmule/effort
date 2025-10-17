@@ -15,7 +15,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16 pb-12 sm:pb-16 lg:pb-0 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-8 pb-12 sm:pt-16 sm:pb-16 lg:pb-0 overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-[#00ff41]/15 to-[#ff4191]/15 rounded-full blur-2xl sm:blur-3xl animate-float" />
