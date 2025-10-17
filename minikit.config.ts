@@ -26,7 +26,7 @@ export const minikitConfig = {
     webhookUrl: `${ROOT_URL}/api/webhook`,
     primaryCategory: "health-fitness",
     tags: ["fitness", "workout", "on-chain", "nft", "crypto"],
-    heroImageUrl: "https://i.ibb.co/3PV1h7D/Screenshot-2025-10-18-at-2-20-51-AM.png", 
+    heroImageUrl: "https://i.ibb.co/LdqzSHyV/Screenshot-2025-10-18-at-3-49-53-AM.png", 
     tagline: "Own your data",
     ogTitle: "Effort - Every workout is coin",
     ogDescription: "Track workouts from Apple Health or Google Fit and turn them into tradeable coins on-chain.",
